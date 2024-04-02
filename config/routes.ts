@@ -1,4 +1,13 @@
-﻿/**
+﻿/*
+ * @Description: 
+ * @Version: 2.0
+ * @Autor: Morning
+ * @Date: 2024-04-02 21:04:28
+ * @LastEditors: Morning
+ * @Motto: 要有梦想，即使遥远
+ * @LastEditTime: 2024-04-03 00:12:03
+ */
+/**
  * @name umi 的路由配置
  * @description 只支持 path,component,routes,redirect,wrappers,name,icon 的配置
  * @param path  path 只支持两种占位符配置，第一种是动态参数 :id 的形式，第二种是 * 通配符，通配符只能出现路由字符串的最后。
@@ -11,49 +20,127 @@
  * @doc https://umijs.org/docs/guides/routes
  */
 export default [
+  // {
+  //   path: '/user',
+  //   layout: false,
+  //   routes: [
+  //     {
+  //       name: 'login',
+  //       path: '/user/login',
+  //       component: './User/Login',
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: '/welcome',
+  //   name: 'welcome',
+  //   icon: 'smile',
+  //   component: './Welcome',
+  // },
+  // {
+  //   path: '/admin',
+  //   name: 'admin',
+  //   icon: 'crown',
+  //   access: 'canAdmin',
+  //   routes: [
+  //     {
+  //       path: '/admin',
+  //       redirect: '/admin/sub-page',
+  //     },
+  //     {
+  //       path: '/admin/sub-page',
+  //       name: 'sub-page',
+  //       component: './Admin',
+  //     },
+  //   ],
+  // },
   {
-    path: '/user',
-    layout: false,
+    path: '/dashboard',
+    name: 'Dashboard',
+    icon: 'icon-yibiaobans',
+    component: './Dashboard',
+  },
+  {
+    name: '合同管理',
+    icon: 'icon-hetongguanli4',
+    path: '/contract',
     routes: [
       {
-        name: 'login',
-        path: '/user/login',
-        component: './User/Login',
+        name: '合同列表',
+        // icon: 'table',
+        path: '/contract/list',
+        component: './Contract/List',
+      },
+      {
+        name: '合同起草/创建',
+        path: '/contract/create',
+        routes: [
+          {
+            name: '标准采购合同创建',
+            path: '/contract/create/standard',
+            component: './Contract/Create/CreateStandard',
+          },
+          {
+            name: '非标准采购合同创建',
+            path: '/contract/create/non-standard',
+            component: './Contract/Create/CreateNonStandard',
+          },
+          {
+            name: '销售与折扣优惠合同',
+            path: '/contract/create/sales-discounts',
+            component: './Contract/Create/CreateSalesDiscounts',
+          },
+          {
+            name: '其他合同',
+            path: '/contract/create/other',
+            component: './Contract/Create/CreateOther',
+          },
+        ],
       },
     ],
   },
   {
-    path: '/welcome',
-    name: 'welcome',
-    icon: 'smile',
-    component: './Welcome',
-  },
-  {
-    path: '/admin',
-    name: 'admin',
-    icon: 'crown',
-    access: 'canAdmin',
+    name: '审批流程',
+    icon: 'icon-shenpiliucheng',
+    path: '/approval',
     routes: [
       {
-        path: '/admin',
-        redirect: '/admin/sub-page',
+        name: '我的代办',
+        path: '/approval/todo',
+        component: './Approval/Todo',
       },
       {
-        path: '/admin/sub-page',
-        name: 'sub-page',
-        component: './Admin',
+        name: '我的已办',
+        path: '/approval/done',
+        component: './Approval/Done',
+      },
+      {
+        name: '到期提醒',
+        path: '/approval/expiration',
+        component: './Approval/Expiration',
+      },
+      {
+        name: '流程报表',
+        path: '/approval/report',
+        component: './Approval/Report',
       },
     ],
   },
   {
-    name: 'list.table-list',
-    icon: 'table',
-    path: '/list',
-    component: './TableList',
+    name: '合同存档',
+    icon: 'icon-cundangyewu',
+    path: '/archive',
+    routes: [
+      {
+        name: '合同存档记录',
+        path: '/archive/record',
+        component: './Archive/Record',
+      },
+    ],
   },
   {
     path: '/',
-    redirect: '/welcome',
+    redirect: '/dashboard',
   },
   {
     path: '*',
