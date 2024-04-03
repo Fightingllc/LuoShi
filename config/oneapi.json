@@ -436,7 +436,7 @@
           "desc": {
             "type": "string"
           },
-          "callNo": {
+          "amount": {
             "type": "integer",
             "format": "int32"
           },

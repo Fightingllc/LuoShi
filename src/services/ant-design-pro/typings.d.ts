@@ -42,11 +42,12 @@ declare namespace API {
     name?: string;
     owner?: string;
     desc?: string;
-    callNo?: number;
+    amount?: number;
     status?: number;
     updatedAt?: string;
     createdAt?: string;
     progress?: number;
+
   };
 
   type RuleList = {

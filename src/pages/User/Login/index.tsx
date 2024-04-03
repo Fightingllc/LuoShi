@@ -226,6 +226,7 @@ const Login: React.FC = () => {
                   id: 'pages.login.username.placeholder',
                   defaultMessage: '用户名: admin or user',
                 })}
+                initialValue={'admin'}
                 rules={[
                   {
                     required: true,
@@ -248,6 +249,7 @@ const Login: React.FC = () => {
                   id: 'pages.login.password.placeholder',
                   defaultMessage: '密码: 1234',
                 })}
+                initialValue={'1234'}
                 rules={[
                   {
                     required: true,

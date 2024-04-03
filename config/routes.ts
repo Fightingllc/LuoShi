@@ -20,17 +20,17 @@
  * @doc https://umijs.org/docs/guides/routes
  */
 export default [
-  // {
-  //   path: '/user',
-  //   layout: false,
-  //   routes: [
-  //     {
-  //       name: 'login',
-  //       path: '/user/login',
-  //       component: './User/Login',
-  //     },
-  //   ],
-  // },
+  {
+    path: '/user',
+    layout: false,
+    routes: [
+      {
+        name: 'login',
+        path: '/user/login',
+        component: './User/Login',
+      },
+    ],
+  },
   // {
   //   path: '/welcome',
   //   name: 'welcome',
@@ -105,7 +105,7 @@ export default [
     path: '/approval',
     routes: [
       {
-        name: '我的代办',
+        name: '我的待办',
         path: '/approval/todo',
         component: './Approval/Todo',
       },
